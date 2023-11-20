@@ -1,0 +1,2 @@
+# TauriGUITemplate
+tauriを使って開発する際のアプリケーションテンプレート
