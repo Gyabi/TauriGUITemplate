@@ -1,7 +1,7 @@
 import { IconType } from 'react-icons/lib';
 import { AiFillDashboard } from 'react-icons/ai';
-import { HiOutlineUserGroup } from 'react-icons/hi';
 import { CiSettings } from "react-icons/ci";
+import { CiCalculator2 } from "react-icons/ci";
 
 type Window = {
     name: string;
@@ -11,15 +11,10 @@ type Window = {
 
 export const windows: Window[] = [
     {
-        name: 'Home',
-        href: '/',
-        icon: AiFillDashboard
+        name: 'CalcPix',
+        href: '/calc_pix',
+        icon: CiCalculator2
     },
-    {
-        name: 'Sample1',
-        href: '/sample1',
-        icon: HiOutlineUserGroup
-    }
 ]
 
 export const specialWindows: Window[] = [

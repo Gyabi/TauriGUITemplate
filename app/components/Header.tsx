@@ -1,3 +1,5 @@
+"use client";
+
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { FaReact } from 'react-icons/fa';
 
