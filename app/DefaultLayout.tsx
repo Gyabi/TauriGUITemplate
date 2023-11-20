@@ -11,7 +11,7 @@ export const DefaultLayout = ({ children }:{children: React.ReactNode}) => {
             <Sidebar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
             <div className='flex flex-col flex-grow bg-gray-500'>
                 <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
-                <main className='bg-gray-800 flex-grow p-20'>{children}</main>
+                <main className='bg-gray-800 flex-grow'>{children}</main>
                 <Footer/>
             </div>
         </div>

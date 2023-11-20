@@ -22,10 +22,9 @@ export const Sidebar = ({ isMenuOpen, setIsMenuOpen }:SidebarProps) => {
             <NavigationItem Icon={AiFillDashboard} href={'/'} name={'HOME'} />
             <NavigationItem
             Icon={HiOutlineUserGroup}
-            href={'/users'}
-            name={'Users'}
+            href={'/sample1'}
+            name={'Sample1'}
             />
-            <NavigationItem Icon={BsGraphUpArrow} href={'/sales'} name={'Sales'} />
         </div>
         <NavigationItem Icon={CiSettings} href={'/setting'} name={'Setting'} />
       </nav>
