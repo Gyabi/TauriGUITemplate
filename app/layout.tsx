@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import './globals.css'
+import { DefaultLayout } from './DefaultLayout'
+import './tailwind-import.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,9 +15,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <DefaultLayout>{children}</DefaultLayout>
+      </body>
     </html>
   )
 }
