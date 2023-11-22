@@ -12,19 +12,22 @@ fn calc_pix(width: i32, height: i32) -> i32 {
 }
 
 #[tauri::command]
-fn sample_method(path: String, datas: Vec<Data>)->Result<(), String>{
-  // pathにdatasをcsvにして書き込む
-  let mut wtr = Writer::from_path(path).unwrap();
-  
-  // dataを順に取り出して、メンバの1つ目と3つ目だけをcsvとして書き込む
+fn sample_method(path: String, datas: Vec<Data>) -> Result<(), String> {
+  let mut wtr = match Writer::from_path(path) {
+    Ok(writer) => writer,
+    Err(e) => return Err(format!("Failed to create writer: {}", e)),
+  };
+
   for data in datas {
-    wtr.serialize((data.sample, data.sample3)).unwrap();
+    if let Err(e) = wtr.serialize((data.sample, data.sample3)) {
+      return Err(format!("Failed to serialize data: {}", e));
+    }
   }
 
-  // 書き込み終了
-  wtr.flush().unwrap();
+  if let Err(e) = wtr.flush() {
+    return Err(format!("Failed to flush writer: {}", e));
+  }
 
-  // エラーが起きなければ終了
   Ok(())
 }
 
