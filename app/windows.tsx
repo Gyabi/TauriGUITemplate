@@ -15,6 +15,11 @@ export const windows: Window[] = [
         href: '/calc_pix',
         icon: CiCalculator2
     },
+    {
+        name: 'Sample',
+        href: '/sample',
+        icon: CiCalculator2
+    },
 ]
 
 export const specialWindows: Window[] = [
