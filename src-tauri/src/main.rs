@@ -3,8 +3,18 @@
   windows_subsystem = "windows"
 )]
 
+mod brent;
+
 use serde::{Deserialize, Serialize};
 use csv::Writer;
+use brent::brent_sample;
+
+
+#[tauri::command]
+fn brent_root() {
+  println!("push!");
+  brent_sample();
+}
 
 #[tauri::command]
 fn calc_pix(width: i32, height: i32) -> i32 {
@@ -40,7 +50,7 @@ struct Data {
 
 fn main() {
   tauri::Builder::default()
-    .invoke_handler(tauri::generate_handler![calc_pix, sample_method])
+    .invoke_handler(tauri::generate_handler![brent_root, calc_pix, sample_method])
     .run(tauri::generate_context!())
     .expect("error while running tauri application");
 }
